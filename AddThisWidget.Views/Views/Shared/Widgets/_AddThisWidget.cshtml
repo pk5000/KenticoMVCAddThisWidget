@@ -1,0 +1,37 @@
+@model VisualAntidote.AddThisWidget.Kentico.MVC.Models.AddThisWidgetViewModel
+
+@{
+    string currentPageURL = Request.Url.AbsoluteUri;
+    string currentPageDescription = "";
+    string emailBody = "";
+
+    if (Model != null)
+    {
+        currentPageDescription = Html.Raw(HttpUtility.HtmlDecode(Model.EmailBodyText)).ToHtmlString().ToString();
+
+        emailBody = currentPageURL;
+
+        if (!String.IsNullOrEmpty(currentPageDescription))
+        {
+            emailBody += currentPageDescription;
+        }
+    }
+}
+
+@if (Context.Kentico().PageBuilder().EditMode)
+{
+    <p>The Add This widget will appear here on the live site.</p>
+}
+
+@*Customize the email share properties: https://www.addthis.com/academy/addthis-email-sharing-service/*@
+
+<script type="text/javascript">
+    var addthis_config = addthis_config || {};
+    addthis_config.ui_email_note = "@currentPageDescription";
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!-- To customize fields: https://www.addthis.com/academy/setting-the-url-title-to-share/ -->
+<div class="addthis_inline_share_toolbox"></div>
+
+

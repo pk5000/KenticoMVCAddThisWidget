@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>$id$</id>
+		<version>$version$</version>
+		<title>$title$</title>
+		<authors>$author$</authors>
+		<owners>$author$</owners>
+		<projectUrl>https://www.visualantidote.com</projectUrl>
+		<iconUrl>https://www.visualantidote.com/getmedia/187c4609-132e-4801-8f66-c6c0912d3789/va-nuget.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<description>$description$</description>
+		<releaseNotes>
+		  Initial release
+		</releaseNotes>
+		<copyright>Copyright 2020</copyright>
+		<license type="expression">MIT</license>
+		<tags>Visual Antidote Kentico MVC Widget AddThis Social Share</tags>
+		<dependencies>
+			<dependency id="Kentico.AspNet.Mvc" version="12.0.29" />
+		</dependencies>
+	</metadata>
+	<files>
+		<!-- Include the compiled views dll -->
+		<file src="bin\VisualAntidote.AddThisWidget.Kentico.MVC.Views.dll" target = "lib\net461" />
+
+		<!-- Sample of how to include this file in the Content of the Nuget, this would cause the SampleIncludeFile.txt to be copied to the SampleResource folder in the project you import the NuGet package in
+	<file src="SampleResource\SampleIncludedFile.txt" target = "Content\SampleResource" />
+	-->
+	</files>
+</package>
